@@ -65,7 +65,7 @@ app.use(scheduleRoute);
 
 // @route GET /
 // @desc Loads form
-app.get('/', (req, res) => {
+app.get('/Project', (req, res) => {
     gfs.files.find().toArray((err, files) => {
         // Check if files
         if (!files || files.length === 0) {
@@ -90,14 +90,14 @@ app.get('/', (req, res) => {
 
 // @route POST /upload
 // @desc Uploads file to DB
-app.post('/upload', upload.single('file'), (req, res) => {
+app.post('/Project/upload', upload.single('file'), (req, res) => {
     // res.json({ file: req.file });
-    res.redirect('/');
+    res.redirect('/Project');
 });
 
 // @route GET /files
 // @desc Display all files in JSON
-app.get('/files', (req, res) => {
+app.get('/Project/files', (req, res) => {
     gfs.files.find().toArray((err, files) => {
         // Check if files
         if (!files || files.length === 0) {
@@ -113,7 +113,7 @@ app.get('/files', (req, res) => {
 
 // @route GET /files/:filename
 // @desc Display all files in JSON
-app.get('/files/:filename', (req, res) => {
+app.get('/Project/files/:filename', (req, res) => {
     gfs.files.findOne({ filename: req.params.filename }, (err, file) => {
         // Check if file
         if (!file || file.length === 0) {
@@ -129,7 +129,7 @@ app.get('/files/:filename', (req, res) => {
 
 // @route GET /image/:filename
 // @desc Display single file Object
-app.get('/image/:filename', (req, res) => {
+app.get('/Project/image/:filename', (req, res) => {
     gfs.files.findOne({ filename: req.params.filename }, (err, file) => {
         // Check if file
         if (!file || file.length === 0) {
@@ -157,13 +157,13 @@ app.get('/image/:filename', (req, res) => {
 
 // @route DELETE /files/:id
 // @desc Delete file
-app.delete('/files/:id', (req, res) => {
+app.delete('/Project/files/:id', (req, res) => {
     gfs.remove({ _id: req.params.id, root: 'uploads' }, (err, gridStore) => {
         if (err) {
             return res.status(404).json({ err: err });
         }
 
-        res.redirect('/');
+        res.redirect('/Project');
     });
 });
 
