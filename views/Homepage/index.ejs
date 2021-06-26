@@ -1,0 +1,643 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JubiLearn</title>
+    <link rel="stylesheet" href="indexStyle.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,300;1,600&display=swap"
+        rel="stylesheet">
+    <style>
+        /* ############# Defaults ############# */
+
+        nav,
+        header,
+        footer {
+            display: block;
+        }
+
+        body {
+            line-height: 1;
+            margin: 0;
+        }
+
+        label {
+            font-size: 35px;
+            font-weight: 600;
+        }
+
+        p {
+            font-size: 20px;
+            line-height: 1.1;
+        }
+
+        article p {
+            font-size: 28px;
+            padding: 20px;
+        }
+
+        .container {
+            width: 100%;
+            margin: auto;
+            padding-top: 4%;
+            padding-bottom: 4%;
+        }
+
+        .row {
+            width: 100%;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+
+        .row::after {
+            display: table;
+            clear: both;
+            content: "";
+        }
+
+        .footer-row {
+            width: 100%;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+
+        .footer-row::after {
+            display: table;
+            clear: both;
+            content: "";
+        }
+
+
+        .col-1 {
+            width: 8.33%
+        }
+
+        .col-2 {
+            width: 16.66%;
+        }
+
+        .col-3 {
+            width: 25%;
+        }
+
+        .col-4 {
+            width: 33.33%;
+        }
+
+        .col-5 {
+            width: 41.66%;
+        }
+
+        .col-6 {
+            width: 50%;
+        }
+
+        .col-7 {
+            width: 58.33%;
+        }
+
+        .col-8 {
+            width: 66.66%;
+        }
+
+        .col-9 {
+            width: 75%;
+        }
+
+        .col-10 {
+            width: 83.33%;
+        }
+
+        .col-11 {
+            width: 91.66%;
+        }
+
+        .col-12 {
+            width: 100%;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        /* ########### Nav Bar ############### */
+
+        nav {
+            width: 100%;
+            margin: 0;
+        }
+
+        nav ul.topnav {
+            background-color: #eee;
+            overflow: hidden;
+            margin: 0;
+            padding: 0;
+            font-size: 18px;
+        }
+
+        ul.topnav li.nav-list {
+            list-style: none;
+            float: left;
+        }
+
+        ul.topnav li.topnav-right {
+            float: right;
+        }
+
+        ul.topnav li.nav-list a {
+            display: block;
+            text-decoration: none;
+            font-family: Montserrat;
+            min-height: 16px;
+            text-align: center;
+            padding: 14px;
+            text-transform: uppercase;
+            color: #666;
+        }
+
+        ul.topnav li a:hover {
+            background-color: grey;
+            color: white;
+            transition: 0.3s ease-in-out;
+        }
+
+        ul.topnav li.dropdownIcon {
+            display: none;
+        }
+
+        /* ############### Custom Styles ################ */
+
+        #section-1-gradient {
+            background: #eceeef
+        }
+
+        div.box {
+            text-align: center;
+            margin: 24px;
+            padding: 36px 24px 40px 24px;
+            border-radius: 8px;
+            background-color: white;
+            box-shadow: 0 0 0 1px rgba(0, 0, 0, .15),
+                0 2px 3px 0px rgba(0, 0, 0, .1);
+        }
+
+
+        div.slopeIcon img {
+            display: block;
+            margin: auto;
+        }
+
+
+
+        div.icon {
+            width: 100%;
+        }
+
+        button {
+            font-size: 32px;
+            font-weight: 700;
+            color: white;
+            background-color: #666;
+            padding: 15px 60px;
+            display: block;
+            text-align: center;
+            margin: 5px;
+            border-radius: 7px;
+            border: none;
+        }
+
+        button.learnMore {
+            font-size: 25px;
+            margin: auto;
+            margin-top: 20px;
+            letter-spacing: 5px;
+            font-weight: 550;
+            text-transform: uppercase;
+            font-family: Montserrat;
+            background-size: 100%;
+            box-shadow: inset 999 0 0 0 rgb(146, 146, 146);
+            transition: 0.3s ease-in-out;
+        }
+
+        button.learnMore:hover {
+            background-size: 150%;
+            cursor: pointer;
+        }
+
+        .leftSide-col {
+            margin-left: 20%;
+        }
+
+        div.rightSide-col {
+            margin-left: 10%;
+        }
+
+        h1.large {
+            color: white;
+            font-size: 50px;
+            margin: 0;
+            line-height: 60px;
+        }
+
+        h1.section2Header {
+            font-size: 50px;
+            text-align: center;
+            font-weight: 600;
+        }
+
+        form h2 {
+            color: white;
+        }
+
+        input[type="text"],
+        input[type="password"] {
+            font-size: 20px;
+            width: 400px;
+            min-width: 100px;
+            padding: 5px;
+            border-radius: 7px;
+            border: none;
+        }
+
+        footer.footsy {
+            background-color: #666;
+            padding-left: 10%;
+        }
+
+        footer.footsy h1 {
+            color: white;
+            font-size: 30px;
+        }
+
+        footer.footsy ul {
+            list-style: none;
+            text-align: left;
+            padding-left: 0;
+        }
+
+        footer.footsy ul li {
+            color: white;
+            font-size: 20px;
+            line-height: 1.5;
+        }
+
+
+        /* ################# Mobile ################# */
+        @media screen and (max-width: 680px) {
+            ul.topnav li:not(:nth-child(1)) {
+                display: none;
+            }
+
+            ul.topnav li.dropdownIcon {
+                display: block;
+                float: right;
+            }
+
+            ul.topnav.responsive li.dropdownIcon {
+                position: absolute;
+                top: 0;
+                right: 0;
+            }
+
+            ul.topnav.responsive {
+                position: relative;
+            }
+
+            ul.topnav.responsive li {
+                display: inline;
+                float: none;
+
+            }
+
+            ul.topnav.responsive li a {
+                display: block;
+                text-align: left;
+            }
+
+            h1.section2Header {
+                font-size: 50px;
+            }
+
+            article p {
+                font-size: 25px;
+            }
+
+
+            .col-7,
+            .col-6,
+            .col-5,
+            .col-4 {
+                width: 100%;
+                margin: 0;
+                margin-top: 10px;
+            }
+
+            div.mobileStack {
+                width: 50%;
+                display: block;
+            }
+
+
+            div.box {
+                padding: 7px;
+                display: block;
+            }
+
+            div.slopeIcon {
+                margin: 0;
+            }
+
+            div.slopIcon img {
+                width: 100%;
+            }
+
+
+            div.leftSide-col,
+            div.rightSide-col {
+                margin: 5%;
+            }
+
+            input[type="text"] {
+                width: 350px;
+            }
+
+            .videoContainer iframe {
+                position: relative;
+                width: 100%;
+                margin: 0;
+                overflow: hidden;
+            }
+
+
+        }
+
+        .topnav responsive {
+            transition: 0.3s ease;
+        }
+
+        footer {
+            align-items: center;
+        }
+
+        .footer-basic {
+            padding: 40px 0;
+            background-color: #e7e7e7;
+            color: #4b4c4d;
+        }
+
+        .footer-basic ul {
+            display: flex;
+            justify-content: center;
+            margin-top: 0;
+            padding: 0;
+            list-style: none;
+            text-align: center;
+            font-size: 18px;
+            line-height: 1.6;
+            font-weight: 3000;
+            margin-bottom: 0;
+            letter-spacing: 1.5px;
+        }
+
+        .footer-basic li {
+            padding: 0 10px;
+        }
+
+        .footer-basic ul a {
+            color: inherit;
+            text-decoration: none;
+            opacity: 0.8;
+        }
+
+        .footer-basic ul a:hover {
+            opacity: 1;
+        }
+
+        .footer-basic .social {
+            text-align: center;
+            padding-bottom: 25px;
+        }
+
+        .footer-basic .social>a {
+            font-size: 24px;
+            width: 40px;
+            height: 40px;
+            line-height: 40px;
+            display: inline-block;
+            text-align: center;
+            border-radius: 50%;
+            border: 1px solid #ccc;
+            margin: 0 8px;
+            color: inherit;
+            opacity: 0.75;
+        }
+
+        .footer-basic .social>a:hover {
+            opacity: 0.9;
+        }
+
+        .footer-basic .copyright {
+            margin-top: 15px;
+            text-align: center;
+            font-size: 13px;
+            color: #aaa;
+            margin-bottom: 0;
+        }
+
+        /* Credit to https://epicbootstrap.com/snippets/footer-basic */
+    </style>
+
+</head>
+
+<body>
+    <nav>
+        <ul class="topnav" id="dropdownClick">
+            <li class="nav-list"><a class="active" href="/Homepage">Home</a></li>
+            <li class="nav-list"><a href="/Task">Task</a></li>
+            <li class="nav-list"><a href="/Schedule">Schedule</a></li>
+            <li class="nav-list"><a href="/">Project</a></li>
+            <!-- <li class="topnav-right nav-list"><a href="#signup">Sign Up</a></li>
+            <li class="topnav-right nav-list"><a href="#signin">Sign In</a></li> -->
+            <li class="dropdownIcon nav-list"><a href="javascript:void(0);" onclick="dropdownMenu()">&#9776;</a></li>
+        </ul>
+    </nav>
+
+    <div class="container" id="section-1-gradient" style="margin: 0; ">
+        <div class="row">
+            <div class="col-6">
+                <div class="leftSide-col">
+                    <h1 class="large" style="color: black; font-family: Montserrat;">JubiLearn</h1>
+                </div>
+                <form action="">
+                    <div class="leftSide-col">
+                        <h2 style="color: black; font-family: Montserrat; font-weight: 500;">Username</h2>
+                        <input class="inputbox" name="username" type="text" placeholder="">
+                        <h2 style="color: black; font-family: Montserrat; font-weight: 500;">Password</h2>
+                        <input class="inputbox" name="password" type="password" placeholder="">
+                    </div>
+                </form>
+            </div>
+            <div class="col-6">
+                <div class="rightSide-col">
+                    <div class="videoContainer">
+                        <img src="../Assets/lmao.jpg" width="560px" height="315px">
+                        <!-- <iframe width="560" height="315" src="https://www.youtube.com/embed/wqd81s0vrAQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <header>
+        <h1 class="section2Header" style="font-family: Montserrat;">The Standards of Awesomeness</h1>
+    </header>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-4">
+                <div class="box">
+                    <div class="icon">
+                        <img src="../Assets/logo.png" width="120px" height="120px">
+                    </div>
+                    <label style="font-family: 'Source Sans Pro', sans-serif;">Task</label>
+                    <p style="font-family: Montserrat; font-size: 18px;">Lorem ipsum dolor sit amet, consectetur
+                        adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.</p>
+                </div>
+            </div>
+            <div class="col-4">
+                <div class="box">
+                    <div class="icon">
+                        <img src="../Assets/logo.png" width="120px" height="120px">
+                    </div>
+                    <label style="font-family: 'Source Sans Pro', sans-serif;">Schedule</label>
+                    <p style="font-family: Montserrat; font-size: 18px;">Lorem ipsum dolor sit amet, consectetur
+                        adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.</p>
+                </div>
+            </div>
+            <div class="col-4">
+                <div class="box">
+                    <div class="icon">
+                        <img src="../Assets/logo.png" width="120px" height="120px">
+                    </div>
+                    <label style="font-family: 'Source Sans Pro', sans-serif;">Projects</label>
+                    <p style="font-family: Montserrat; font-size: 18px;">Lorem ipsum dolor sit amet, consectetur
+                        adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.</p>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <button class="learnMore">Learn More</button>
+            </div>
+        </div>
+    </div>
+    <hr>
+    <div class="container">
+        <div class="row">
+            <div class="col-7">
+                <article>
+                    <p style="font-family: Montserrat; font-size: 28px;">Lorem ipsum dolor sit amet, consectetur
+                        adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.Lorem ipsum dolor sit
+                        amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.Lorem
+                        ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+                        dolore.</p>
+                </article>
+            </div>
+            <div class="col-5">
+                <div class="slopeIcon">
+                    <img src="../Assets/studyroom.jpg" width="300px" height="300px">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--  <footer class="footsy">
+        <div class="row">
+            <div class="col-3 mobileStack">
+                <h1>Company</h1>
+                <ul>
+                    <li>About</li>
+                    <li>Blogs</li>
+                    <li>Careers</li>
+                </ul>
+            </div>
+            <div class="col-3 mobileStack">
+                <h1>Products</h1>
+                <ul>
+                    <li>Computers</li>
+                    <li>iPads</li>
+                    <li>iPhones</li>
+                </ul>
+            </div>
+            <div class="col-3 mobileStack">
+                <h1>Learn More</h1>
+                <ul>
+                    <li>Developers</li>
+                    <li>Designers</li>
+                    <li>Hackers</li>
+                </ul>
+            </div>
+            <div class="col-3 mobileStack">
+                <h1>Support</h1>
+                <ul>
+                    <li>Help</li>
+                    <li>Q&A</li>
+                    <li>Contact</li>
+                </ul>
+            </div>
+        </div>
+    </footer>-->
+
+    <div class="footer-basic">
+        <footer>
+            <div class="social">
+                <a href="#"><i class="icon ion-social-instagram"></i></a>
+                <a href="#"><i class="icon ion-social-twitter"></i></a>
+                <a href="#"><i class="icon ion-social-facebook"></i></a>
+            </div>
+            <ul class="list-inline"
+                style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;">
+                <li class="list-inline-item"><a href="#">Home</a></li>
+                <li class="list-inline-item"><a href="#">About</a></li>
+                <li class="list-inline-item"><a href="#">Terms</a></li>
+                <li class="list-inline-item"><a href="#">Privacy Policy</a></li>
+            </ul>
+            <p class="copyright"
+                style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;">
+                JubiLearn 2021</p>
+        </footer>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.bundle.min.js"></script>
+
+
+
+
+
+    <script>
+        function dropdownMenu() {
+            var x = document.getElementById("dropdownClick");
+            if (x.className === "topnav") {
+                x.className += " responsive";
+                // change topnav to topnav.responsive
+            } else {
+                x.className = "topnav";
+            }
+        }
+    </script>
+
+</body>
+
+</html>

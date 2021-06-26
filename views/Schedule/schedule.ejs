@@ -1,0 +1,185 @@
+<html>
+
+<head>
+    <title>JubiLearn</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,300;1,600&display=swap"
+        rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200&amp;display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="stylesheet" href="../Homepage/indexStyle.css">
+    <link rel="stylesheet" href="../Tasks/CSS/footer.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link href='https://cdn.jsdelivr.net/npm/fullcalendar@5.8.0/main.css' rel='stylesheet' />
+    <style>
+        #calendar {
+            width: 80%;
+            margin-left: 10%;
+            margin-top: 60px;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .calendarTable {
+            width: 100%;
+            border: 1px solid #000;
+        }
+
+        .calendarTable thead tr th {
+            background: #000;
+            border-bottom: 1px solid #000;
+            padding: 20px 0px;
+            color: #fff;
+        }
+
+        .calendarTable tr td {
+            text-align: center;
+            padding: 20px 0;
+            border: 1px solid #ccc;
+            cursor: pointer;
+            background-color: #dadada;
+        }
+
+        .calendarBtns {
+            padding: 10px 0;
+            width: 100%;
+        }
+
+        .calendarBtns button {
+            padding: 6px 12px;
+            font-size: 18px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .calendarDiv {
+            display: none;
+        }
+
+        #calendarTable_1 {
+            display: block;
+        }
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src='https://cdn.jsdelivr.net/npm/fullcalendar@5.8.0/main.min.js'></script>
+    
+    <script>
+
+    $(document).ready(function () {
+        var calendarEl = document.getElementById('calendar1');
+        var calendar = new FullCalendar.Calendar(calendarEl, {
+            initialView: 'dayGridMonth',
+            dateClick: function(info) {
+                $('#fullCalModal').modal('show');
+                console.log(123);
+                $('#date-name').val(info.dateStr)
+                // var dateStr = prompt('Enter a date in YYYY-MM-DD format');
+                // var date = new Date(info.dateStr + 'T00:00:00');
+                // calendar.addEvent({
+                //     title: 'dynamic event',
+                //     start: date,
+                //     allDay: true
+                // });
+            },
+            events: [
+                { // this object will be "parsed" into an Event Object
+                    title: 'The Title', // a property!
+                    start: '2021-06-25', // a property!
+                    end: '2021-06-25' // a property! ** see important note below about 'end' **
+                }
+            ]
+        });
+        calendar.render();
+
+        $('#submitButton').on('click', function(e){
+            // We don't want this to act as a link so cancel the link action
+            e.preventDefault();
+            doSubmit();
+        });
+
+        function doSubmit(){
+            var title = $('#event-text').val()
+            var start = $('#date-name').val()
+            $("#fullCalModal").modal('hide');
+            console.log($('#event-text'))
+            calendar.addEvent({
+                title: title,
+                start: start,
+                allDay: true
+            });
+
+            $('#event-text').val('')
+        }
+    });
+    </script>
+</head>
+
+<body>
+    <nav>
+        <ul class="topnav" id="dropdownClick">
+            <li class="nav-list"><a class="active" href="/Homepage">Home</a></li>
+            <li class="nav-list"><a href="/Task">Task</a></li>
+            <li class="nav-list"><a href="#contact">Schedule</a></li>
+            <li class="nav-list"><a href="/">Project</a></li>
+            <!-- <li class="topnav-right nav-list"><a href="#signup">Sign Up</a></li>
+            <li class="topnav-right nav-list"><a href="#signin">Sign In</a></li> -->
+            <li class="dropdownIcon nav-list"><a href="javascript:void(0);" onclick="dropdownMenu()">&#9776;</a></li>
+        </ul>
+    </nav>
+
+
+    <!-- <div id="calendar"></div> -->
+    <div id='calendar1'></div>
+    <div class="footer-basic">
+        <footer>
+            <div class="social">
+                <a href="#"><i class="icon ion-social-instagram"></i></a>
+                <a href="#"><i class="icon ion-social-twitter"></i></a>
+                <a href="#"><i class="icon ion-social-facebook"></i></a>
+            </div>
+            <ul class="list-inline">
+                <li class="list-inline-item"><a href="../Homepage/index.html">Home</a></li>
+                <li class="list-inline-item"><a href="#">About</a></li>
+                <li class="list-inline-item"><a href="#">Terms</a></li>
+                <li class="list-inline-item"><a href="#">Privacy Policy</a></li>
+            </ul>
+            <p class="copyright">JubiLearn 2021</p>
+        </footer>
+    </div>
+  <div class="modal fade" id="fullCalModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">New event</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form>
+            <div class="mb-3">
+              <label for="date-name" class="col-form-label">Event Date:</label>
+              <input type="text" class="form-control" id="date-name" disabled>
+            </div>
+            <div class="mb-3">
+              <label for="event-text" class="col-form-label">Event title:</label>
+              <textarea class="form-control" id="event-text"></textarea>
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary" id="submitButton">Send message</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+<script src="../Schedule/calendar.js" async=""></script>
+
+</html>

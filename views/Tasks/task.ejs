@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JubiLearn</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+    <link rel="stylesheet" href="../Tasks/CSS/task.css">
+    <link rel="stylesheet" href="../Tasks/CSS/user.css">
+    <link rel="stylesheet" href="../Homepage/indexStyle.css">
+    <link rel="stylesheet" href="../Tasks/CSS/footer.css">
+
+    <style>
+        #content {
+            padding-bottom: 500px;
+            margin-left: 4px;
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <ul class="topnav" id="dropdownClick">
+            <li class="nav-list"><a class="active" href="/Homepage">Home</a></li>
+            <li class="nav-list"><a href="/Task">Task</a></li>
+            <li class="nav-list"><a href="/Schedule">Schedule</a></li>
+            <li class="nav-list"><a href="/">Project</a></li>
+            <!-- <li class="topnav-right nav-list"><a href="#signup">Sign Up</a></li>
+            <li class="topnav-right nav-list"><a href="#signin">Sign In</a></li> -->
+            <li class="dropdownIcon nav-list"><a href="javascript:void(0);" onclick="dropdownMenu()">&#9776;</a></li>
+        </ul>
+    </nav>
+
+
+    <div class="row info" , style="margin: 0;">
+        <div class="col-3">
+            <div class="user">
+                <img src="Tasks/user.png">
+            </div>
+        </div>
+        <div class="col-9">
+            <div class="student-info" style="font-family: Monserrat;">
+                <h4 class="school">School: Le Quy Don High School For The Gifted</h4>
+                <h4>Class: 11A3</h4>
+            </div>
+        </div>
+    </div>
+    <div id="content" class="row">
+        <div id="phongtrao" class="col-sm-12 col-lg-6">
+            <div id="myDIV" class="header">
+                <h3>Hoạt Động Phong Trào</h3>
+                <input type="text" id="myInput" placeholder="">
+                <span onclick="newElement()" class="addBtn">Add</span>
+            </div>
+
+            <ul id="myUL">
+                <li class="list">Đăng ký thi "Thanh niên sáng tạo vì khí hậu" (25/07/2021)</li>
+                <li class="list">Tham gia Đội tình nguyện "Hoa Phượng Đỏ" (01/06/2021)</li>
+                <li class="list">Tham gia Hội thảo du học trực tuyến (15/05/2021)</li>
+                <li class="list">Hội thi "Lá phiếu trách nhiệm"(02/05/2021)</li>
+                <li class="list">Tham gia buổi tư vấn hướng nghiệp và tuyển sinh (24/04/2021)</li>
+                <li class="list">Phát động phong trào "Tủ sách mở" (15/04/2021)</li>
+            </ul>
+        </div>
+        <div id="hoctap" class="col-sm-12 col-lg-6">
+            <div id="myDIV2" class="header">
+                <h3>Học Tập</h3>
+                <input type="text" id="myInput2" placeholder="">
+                <span class="addBtn" id="addBtn2">Add</span>
+            </div>
+
+            <ul id="myUL2">
+                <li class="list">Kiểm tra 1 tiết Toán (13/04/2021)</li>
+                <li class="list">Hải Đăng thuyết trình Ngữ Văn (01/04/2021)</li>
+                <li class="list">Kiểm tra thử IELTS (03/03/2021)</li>
+                <li class="list">Kiểm tra 15 phút Sinh (12/02/2021)</li>
+                <li class="list">Kiểm tra 15 phút Hoá (25/01/2021)</li>
+                <li class="list">Quang Huy thuyết trình tiếng Pháp (02/01/2021)</li>
+            </ul>
+        </div>
+        <div class="clear"></div>
+    </div>
+
+
+    <!-- Site footer -->
+
+
+
+    <div class="footer-basic">
+        <footer>
+            <div class="social">
+                <a href="#"><i class="icon ion-social-instagram"></i></a>
+                <a href="#"><i class="icon ion-social-twitter"></i></a>
+                <a href="#"><i class="icon ion-social-facebook"></i></a>
+            </div>
+            <ul class="list-inline">
+                <li class="list-inline-item"><a href="../Homepage/index.html">Home</a></li>
+                <li class="list-inline-item"><a href="#">About</a></li>
+                <li class="list-inline-item"><a href="#">Terms</a></li>
+                <li class="list-inline-item"><a href="#">Privacy Policy</a></li>
+            </ul>
+            <p class="copyright">JubiLearn 2021</p>
+        </footer>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.bundle.min.js"></script>
+    <script src="task.js"></script>
+
+    <script>
+        function dropdownMenu() {
+            var x = document.getElementById("dropdownClick");
+            if (x.className === "topnav") {
+                x.className += " responsive";
+                // change topnav to topnav.responsive
+            } else {
+                x.className = "topnav";
+            }
+        }
+    </script>
+
+    <script>
+        // Create a "close" button and append it to each list item
+        var myNodelist = document.getElementsByClassName("list");
+        var i;
+        for (i = 0; i < myNodelist.length; i++) {
+            var span = document.createElement("SPAN");
+            var txt = document.createTextNode("\u00D7");
+            span.className = "close";
+            span.appendChild(txt);
+            myNodelist[i].appendChild(span);
+        }
+
+        // Click on a close button to hide the current list item
+        var close = document.getElementsByClassName("close");
+        var i;
+        for (i = 0; i < close.length; i++) {
+            close[i].onclick = function () {
+                var div = this.parentElement;
+                div.style.display = "none";
+            }
+        }
+
+        // Add a "checked" symbol when clicking on a list item
+        var list = document.getElementById("myUL");
+        list.addEventListener('click', function (ev) {
+            if (ev.target.className === 'list') {
+                ev.target.classList.toggle('checked');
+            }
+        }, false);
+
+        // Create a new list item when clicking on the "Add" button
+        function newElement() {
+            var li = document.createElement('li');
+            var inputValue = document.getElementById("myInput").value;
+            var t = document.createTextNode(inputValue);
+            li.appendChild(t);
+            if (inputValue === '') {
+                alert("You must write something!");
+            } else {
+                document.getElementById("myUL").appendChild(li); li.className = "list";
+            }
+            document.getElementById("myInput").value = "";
+
+            var span = document.createElement("SPAN");
+            var txt = document.createTextNode("\u00D7");
+            span.className = "close";
+            span.appendChild(txt);
+            li.appendChild(span);
+
+            for (i = 0; i < close.length; i++) {
+                close[i].onclick = function () {
+                    var div = this.parentElement;
+                    div.style.display = "none";
+                }
+            }
+        }
+
+
+
+
+        const addBtn2 = document.querySelector('#addBtn2');
+
+
+
+
+        // Add a "checked" symbol when clicking on a list item
+        var list = document.getElementById("myUL2");
+        list.addEventListener('click', function (ev) {
+            if (ev.target.className === 'list') {
+                ev.target.classList.toggle('checked');
+            }
+        }, false);
+
+        // Create a new list item when clicking on the "Add" button
+        addBtn2.addEventListener("click", () => {
+
+            var li = document.createElement('li');
+            var inputValue = document.getElementById("myInput2").value;
+            var t = document.createTextNode(inputValue);
+            li.appendChild(t);
+            if (inputValue === '') {
+                alert("You must write something!");
+            } else {
+                document.getElementById("myUL2").appendChild(li); li.className = "list";
+            }
+            document.getElementById("myInput2").value = "";
+
+            var span = document.createElement("SPAN");
+            var txt = document.createTextNode("\u00D7");
+            span.className = "close";
+            span.appendChild(txt);
+            li.appendChild(span);
+
+            for (i = 0; i < close.length; i++) {
+                close[i].onclick = function () {
+                    var div = this.parentElement;
+                    div.style.display = "none";
+                }
+            }
+        });
+    </script>
+</body>
+
+</html>
+
+<!-- credit to https://epicbootstrap.com/snippets/footer-basic -->
